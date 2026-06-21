@@ -16,3 +16,5 @@ Web aplikacija za prikaz destinacija.
 
 Domena: putovanja.site.je
 (treba pričekati 24 - 72h prije početka rada)
+
+YOUTUBE Video: https://youtu.be/CdW2hQP7Ip8
