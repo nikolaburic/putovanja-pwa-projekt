@@ -1,0 +1,320 @@
+/* === PONAVLJAJUĆE BOJE === */
+:root {
+    --zuta-boja: #e6ae06;
+    --plava-boja: #0077b6;
+}
+
+/* === OPĆENITO === */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;   /* siva pozadina kao na slici */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* cijela visina ekrana */
+    
+}
+
+
+
+/* === GLAVNI SADRŽAJ - CENTRIRAN === */
+main {
+    max-width: 1100px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+main section {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+/* === HEADER === */
+header {
+    background-color: white;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--zuta-boja);
+}
+
+
+/* === INDEX=== */
+.kategorija{
+    font-size: 1.1rem;
+    background-color: var(--zuta-boja);
+    color: white;
+    text-decoration: underline;
+    padding: 12px 20px;
+    margin: 0;                /* makni default h2 margin */
+}
+
+
+
+
+/* === NAVIGACIJA === */
+nav {
+    padding: 0px 20px;
+    max-width: 1000px;           /* širina sadržaja */
+    margin:  auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;              /* sakrij na desktopu */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+.nav-left .nav-link {
+    color:  var(--zuta-boja);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nav-right {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-right li a {
+    color: black;
+    text-decoration: none;
+    padding: 18px 0;
+    display: block;
+    transition: all 0.3s;
+}
+
+.nav-right li a:hover {
+    color: var(--zuta-boja);
+}
+
+.admin-btn {
+    background-color: #e63946;
+    padding: 8px 18px !important;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+
+/* MOBITEL: hamburger meni */
+@media (max-width: 768px) {
+
+    .nav-bar {
+        position: relative;
+    }
+
+    /* Pokaži gumb */
+    .nav-toggle {
+        display: block;
+        color: black;
+    }
+
+    /* Sakrij linkove po defaultu na mobitelu */
+    .nav-right {
+        position: absolute;
+        top: 100%;              /* ispod nav bara */
+        right: 0;
+        left: 0;
+        background-color: white;
+        flex-direction: column;
+        gap: 0;
+        display: none;          /* bitno! */
+        border-bottom: 1px solid var(--zuta-boja);
+    }
+
+    .nav-right li a {
+        padding: 12px 20px;
+        border-top: 1px solid #eee;
+    }
+
+    /* Kad dodamo klasu .nav-open na nav-bar, meni se pokaže */
+    .nav-bar.nav-open .nav-right {
+        display: flex;
+    }
+}
+
+/* === FOOTER === */
+footer {
+    background-color: var(--plava-boja);
+    color: #ffffff;
+    text-align: center;
+
+}
+
+/* === KARTICE DESTINACIJA (kao na slici) === */
+/* === KARTICE DESTINACIJA === */
+.destinacija-card {
+    display: flex;
+    background: white;
+    border: 1px solid #ddd;
+    margin: 15px 0px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s;
+    height: 200px;
+}
+
+.destinacija-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.destinacija-card img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Desni dio kartice - flex stupac */
+.destinacija-card .content {
+    padding: 15px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;     /* naslov gore, sažetak sredina, link dolje */
+    justify-content: space-between;
+}
+
+/* Gornji red - naslov lijevo, datum desno */
+.destinacija-card .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-top a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.destinacija-card {
+    margin: 0;
+    font-size: 1.2rem;
+
+}
+
+.destinacija-card .datum {
+    font-size: 0.85rem;
+    color: #888;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+/* Sažetak - sredina */
+.destinacija-card p {
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Donji red - link desno */
+.destinacija-card .card-bottom {
+    display: flex;
+    justify-content: flex-end;   /* gurni link na desnu stranu */
+}
+
+.destinacija-card .btn {
+    display: inline-block;
+    background-color: var(--plava-boja);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.destinacija-card .btn:hover {
+    background-color: #023e8a;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .destinacija-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .destinacija-card img {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+
+
+/* === CLANAK STRANICA === */
+
+
+
+/* naslov */
+.naslov {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+/* datum */
+.datum {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 15px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+/* slika */
+.slika {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* tekst */
+.tekst {
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+    margin: 50px;
+}
+
+
+
+/* registracija i prijava */
+.form-item {
+    margin-bottom: 15px;
+}
+
+
+
+/* uredivanje */
+
+.admin-card {
+    display: flex;
+    background: white;
+    border: 1px solid #ddd;
+    margin: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s;
+    height: 500px;
+}
