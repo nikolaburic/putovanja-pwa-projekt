@@ -12,3 +12,7 @@ Web aplikacija za prikaz destinacija.
 - CSS
 - PHP
 - MySQL
+
+
+Domena: putovanja.site.je
+(treba pričekati 24 - 72h prije početka rada)
